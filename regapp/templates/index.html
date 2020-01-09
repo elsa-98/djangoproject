@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+{% load static  %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+    <body class="c">
+        <div class="navbar">
+             <ul>
+                    <li><a href="{% url 'index' %}">HOME </a></li>
+                    <li><a href="{% url 'login' %}">LOGIN </a>
+                        <!--<div class="submenu">
+                        <ul>
+                            <li><a href="{% url 'login' %}">ADMIN </a></li>
+                            <li><a href="{%url 'faculty' %}">FACULTY </a></li>
+                            <li><a href="{%url 'student' %}">STUDENT </a></li> 
+                       </ul>
+                       </div>-->
+                    </li>
+ 
+                     
+            </ul>
+        </div>
+    </body>
+</html>

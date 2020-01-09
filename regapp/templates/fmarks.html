@@ -1,0 +1,41 @@
+<doctype html>
+<html>
+<head>
+<title>
+        faculty
+</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+    <style>
+    table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red}
+    th,td{padding :20px 30px}
+</style>
+    </style>
+</head>
+<body class="c">
+<div class="cont1">
+    
+<h1>ADD MARKS</h1> 
+<form action="{% url 'fmarking' %}" method ="post">
+        
+{% csrf_token %}
+Sname:
+<input type="text"class="frm"  name="Sname"><br>
+Sid:
+<input type="text"class="frm" name="Sid"><br>
+C:
+<input type="text"class="frm" name="C"><br> 
+CPP:
+<input type="text"class="frm"  name="CPP"><br>   
+Java:
+<input type="text"class="frm"  name="Java"><br>
+Python:
+<input type="text"class="frm" name="Python"><br>  
+Html:
+<input type="text"class="frm" name="Html"><br>  
+<input type="submit"  class="a" name="students">
+</form>
+
+</body>
+</html>

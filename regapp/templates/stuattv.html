@@ -1,0 +1,56 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red;background-color:pink;}
+th,td{padding :20px 30px}
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+     <ul>
+        <li><a href="{% url 'sprof' %}">PROFILE </a></li>
+        <li><a href="{% url 'stumarv' %}">ACADEMICS </a></li>
+        <li><a href="{% url 'stuattv' %}">ATTENDANCE </a></li>
+        <li>
+            <form  action="{% url 'logouts' %}"  method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Logout" name="Logout" class="frm">
+            </form>
+        </li>
+    </ul>
+</div >
+<h3>STUDENT DETAILS</h3>
+<table>
+    <thead>
+        <tr>
+            <td>SName</td>
+            <td>Sid</td>
+            <td>Period1</td>
+            <td>Period2</td>
+            <td>Period3</td>
+            <td>Period4</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% if authors %}
+    {% for i in authors %}
+    <tr>
+        <td>{{i.Sname}}</td>
+        <td>{{i.Sid}}</td>
+        <td>{{i.Period1}}</td>
+        <td>{{i.Period2}}</td>
+        <td>{{i.Period3}}</td>
+        <td>{{i.Period4}}</td>
+    </tr>
+    {%endfor%}
+    {%endif%}
+    </tbody>
+</table>
+</body>
+</html>

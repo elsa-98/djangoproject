@@ -1,0 +1,34 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+{% load static  %}
+<link rel="stylesheet"  type="text/css" href="{% static 'css/style.css'%}">
+<style>
+</style>
+</head>
+<body class="c">
+<div class="cont1">
+<form  action="{% url 'flleev' %}"  method="POST">
+{% csrf_token %}
+<h3>FACULTY LEAVE</h3>
+            Fname:
+            <input type="text" class="frm"  name="Fname"><br>
+            Fid:
+            <input type="text" class="frm" name="Fid"><br>
+            From_date:
+            <input type="text" class="frm"  name="From_date"><br>
+            To_date:
+            <input type="text" class="frm"  name="To_date"><br>
+            Reason:
+            <input type="text" class="frm"  name="Reason"><br>
+            Status:
+            <select name="Status" class="frm">
+            <option value="Applied">Applied</option>
+            </select>
+            <input type="submit" class="a" name="submit"><br>
+
+</form>
+</div>
+</body>
+</html>

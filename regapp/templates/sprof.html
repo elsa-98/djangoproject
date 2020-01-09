@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red;background-color:pink;}
+th,td{padding :20px 30px}
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+    
+    <ul>
+        <li><a href="{% url 'sprof' %}">PROFILE </a></li>
+        <li><a href="{%url 'stumarv' %}">MARKS </a></li>
+        <li><a href="{%url 'stuattv' %}">ATTENDANCE </a></li>
+         <li>
+            <form  action="{% url 'logouts' %}"  method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Logout" name="Logout" class="frm">
+            </form>
+        </li>
+    </ul>
+</div>
+<div >
+<h3>STUDENT DETAILS</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Sid</td>
+            <td>Address</td>
+            <td>Gender</td>
+            <td>AdmDate</td>
+            <td>Mobileno</td>
+            <td>Batch</td>
+            <td>Email</td>
+            <td>Guardian</td>
+            <td>Password</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% if authors %}
+    {% for i in authors %}
+    <tr>
+        <td>{{i.Sname}}</td>
+        <td>{{i.Sid}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Gender}}</td>
+        <td>{{i.AdmDate}}</td>
+        <td>{{i.Mobileno}}</td>
+        <td>{{i.Batch}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Guardian}}</td>
+        <td>{{i.Password}}</td>
+    </tr>
+    {%endfor%}
+    {%endif%}
+    </tbody>
+</table>
+</body>
+</html>

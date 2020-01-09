@@ -1,0 +1,36 @@
+<doctype html>
+<html>
+<head>
+<title>
+        faculty
+</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+    <style>
+    </style>
+</head>
+<body class="c">
+<div class="cont1">
+<form  action="{% url 'facdb' %}"  method="POST">
+    {% csrf_token %}
+    <h3>Faculty Registration</h3>
+
+
+    <input type="text"class="frm" placeholder="Facultyname" name="Fname"><br>
+    <input type="text" class="frm" placeholder="FID" name="Fid"><br>
+    <input type="text" class="frm" placeholder="Address" name="Address"><br>
+    <input type="text" class="frm" placeholder="Gender" name="Gender"><br>
+    <input type="text" class="frm" placeholder="Qualification" name="Qual"><br>
+    <input type="text" class="frm" placeholder="Mobileno" name="Mobileno"><br>
+    <input type="text" class="frm" placeholder="Batch" name="Batch"><br>
+    <input type="text" class="frm" placeholder="Email" name="Email"><br>
+    <input type="text" class="frm" placeholder="password" name="password"><br>
+    <input type="submit"  class="a" name="students">
+  
+    
+    
+</form>
+</div>
+</body>
+</html>

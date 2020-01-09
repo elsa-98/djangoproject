@@ -1,0 +1,74 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red;background-color:pink}
+th,td{padding :20px 30px}
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+    
+    <ul>
+        <li><a href="{% url 'fprof' %}">PROFILE </a></li>
+        <li><a href="{% url 'fleav' %}"> LEAVE </a>
+        <div class="submenu">
+        <ul>
+            <li><a href="{%url 'fleav' %}">APPLY LEAVE </a></li>
+            <li><a href="{%url 'fleafet' %}">VIEW LEAVE </a></li>
+        </ul>
+        </div>
+        <li><a href="{% url 'fmarks' %}">ADD MARKS </a></li>
+        <li><a href="{% url 'stureg' %}">ADD STUDENT </a></li>
+        <li><a href="{%url 'login' %}">TIMETABLE </a></li>
+        <li><a href="{%url 'login' %}">ATTENDANCE </a>
+            <div class="submenu">
+            <ul>
+                <li><a href="{%url 'atten' %}">ADD ATTENDANCE </a></li>
+                <li><a href="{%url 'fattfetch' %}">VIEW ATTENDANCE </a></li>
+            </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<div >
+<h3>FACULTY DETAILS</h3>
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Fid</td>
+            <td>Address</td>
+            <td>Gender</td>
+            <td>Qual</td>
+            <td>Mobileno</td>
+            <td>Batch</td>
+            <td>Email</td>
+            <td>Password</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% if authors %}
+    {% for i in authors %}
+    <tr>
+        <td>{{i.Fname}}</td>
+        <td>{{i.Fid}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Gender}}</td>
+        <td>{{i.Qual}}</td>
+        <td>{{i.Mobileno}}</td>
+        <td>{{i.Batch}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Fpassword}}</td>
+    </tr>
+    {%endfor%}
+    {%endif%}
+    </tbody>
+</table>
+</body>
+</html>

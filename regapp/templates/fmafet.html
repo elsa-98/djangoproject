@@ -1,0 +1,73 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red;background-color:pink}
+th,td{padding :20px 30px}
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+    
+    <ul>
+        <li><a href="{%url 'login' %}">FACULTY </a>
+            <div class="submenu">
+            <ul>
+                <li><a href="{%url 'login' %}">PROFILE </a></li>
+                <li><a href="{%url 'login' %}">ATTENDANCE </a></li>
+                <li><a href="{% url 'stureg' %}">STUDENT REGISTRATION </a></li>
+            </ul>
+            </div>
+        </li>
+        <li><a href="{%url 'login' %}">STUDENT </a>
+            <div class="submenu">
+            <ul>
+                <li><a href="{%url 'login' %}">PROFILE </a></li>
+                <li><a href="{%url 'login' %}">ATTENDANCE </a></li>
+                <li><a href="{%url 'login' %}">ACADEMICS </a></li>
+            </ul>
+            </div>
+        </li>
+        <li><a href="{%url 'login' %}">TIMETABLE </a></li>
+        <li><a href="{%url 'index' %}">LOGOUT </a></li>
+    </ul>
+</div>
+<div >
+<h3>FACULTY DETAILS</h3>
+<table>
+    <thead>
+        <tr>
+            <td>SName</td>
+            <td>Sid</td>
+            <td>C</td>
+            <td>CPP</td>
+            <td>Java</td>
+            <td>Python</td>
+            <td>Html</td>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% if authors %}
+    {% for i in authors %}
+    <tr>
+        <td>{{i.Sname}}</td>
+        <td>{{i.Sid}}</td>
+        <td>{{i.C}}</td>
+        <td>{{i.CPP}}</td>
+        <td>{{i.Java}}</td>
+        <td>{{i.Python}}</td>
+        <td>{{i.Html}}</td>
+    </tr>
+    {%endfor%}
+    {%endif%}
+    </tbody>
+</table>
+</body>
+</html>

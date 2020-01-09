@@ -1,0 +1,19 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>homepage</title>
+{% load static  %}
+<link rel="stylesheet" href="{% static 'css/style.css'%}">
+<body class="c">
+<div class="cont1">
+<form action ="{% url 'submit' %}" method="POST">
+    {% csrf_token %}
+<input type="text" placeholder="firstname" name="firstname" class="frm"><br>
+<input type="text" placeholder="password" name="password" class="frm"><br>
+<input type="text" placeholder="emailid" name="emailid" class="frm"><br>
+<input type="text" placeholder="mobilenumber"name="mobilenumber" class="frm"><br>
+<input type="submit" placeholder="submit" name="submit" class="a"><br>
+</form>
+</div>
+</body>
+</html>

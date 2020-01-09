@@ -1,0 +1,33 @@
+<doctype html>
+<html>
+<head>
+<title>
+        faculty
+</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+    <style>
+    </style>
+</head>
+<body class="c">
+<div class="cont1">
+<form  action="{% url 'fdrop' %}"  method="POST">
+    {% csrf_token %}
+    <h3>Add Attendance </h3>
+
+
+    <input type="text"class="frm" placeholder="Sname" name="Sname"><br>
+    <input type="text" class="frm" placeholder="SID" name="Sid"><br>
+    <input type="text" class="frm" placeholder="Period1" name="Period1"><br>
+    <input type="text" class="frm" placeholder="Period2" name="Period2"><br>
+    <input type="text" class="frm" placeholder="Period3" name="Period3"><br>
+    <input type="text" class="frm" placeholder="Period4" name="Period4"><br>
+    <input type="submit"  class="a" name="students">
+  
+    
+    
+</form>
+</div>
+</body>
+</html>

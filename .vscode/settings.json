@@ -1,0 +1,7 @@
+{
+    "python.linting.pycodestyleEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.banditPath": "C:\\Users\\Enter-Lab\\AppData\\Roaming\\Python\\Python38\\site-packages\\pylint",
+    "python.linting.pylintCategorySeverity.convention": "Hint",
+    "python.linting.pylintPath": "C:\\Users\\Enter-Lab\\AppData\\Roaming\\Python\\Python38\\site-packages\\pylint"
+}

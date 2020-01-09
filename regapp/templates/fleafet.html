@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+table,th,td{border:2px solid blue;border-collapse:collapse;text-align:center;color:red;background-color:pink}
+th,td{padding :20px 30px}
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+     <ul>
+        <li><a href="{% url 'sprof' %}">PROFILE </a></li>
+        <li><a href="{%url 'stumarv' %}">MARKS</a></li>
+        <li><a href="{%url 'stuattv' %}">ATTENDANCE </a>
+            <div class="submenu">
+            <ul>
+                <li><a href="{%url 'stleav' %}">APPLY LEAVE </a></li>
+                <li><a href="{%url 'fleafet' %}">VIEW LEAVE </a></li>
+            </ul>
+            </div>
+        </li>
+        <li><a href="{%url 'index' %}">LOGOUT </a></li>
+    </ul>
+</div>
+<h3>LEAVE</h3>
+<table>
+    <thead>
+        <tr>
+            <td>FName</td>
+            <td>Fid</td>
+            <td>From_date</td>
+            <td>To_date</td>
+            <td>Reason</td>
+            <td>Status</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% if authors %}
+    {% for i in authors %}
+    <tr>
+        <td>{{i.Fname}}</td>
+        <td>{{i.Fid}}</td>
+        <td>{{i.From_date}}</td>
+        <td>{{i.To_date}}</td>
+        <td>{{i.Reason}}</td>
+        <td>{{i.Status}}</td>
+    </tr>
+    {%endfor%}
+    {%endif%}
+    </tbody>
+</table>
+<div class="cont">
+<form action ="{% url 'submit' %}" method="POST">
+    {% csrf_token %}
+<input type="text" placeholder="Fid" name="Fid" class="frm"><br>
+<input type="submit"  name="submit"value="Approve" class="a"><br>
+</form>
+</div>
+</body>
+</html>

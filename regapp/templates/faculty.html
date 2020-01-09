@@ -1,0 +1,26 @@
+<doctype html>
+<html>
+<head>
+<title>
+        faculty
+</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+    <style>
+    </style>
+</head>
+<body class="c">
+<div class="cont">
+    
+<h1>FACULTY</h1> 
+<form action="{% url 'fac' %}" method ="post">
+        
+{% csrf_token %}
+            <input type="text" class="frm" palceholder="faculty name" name="Fname"><br>
+            <input type="text" class="frm" placeholder="password" name="password"><br>
+            <input type="submit" class="a" name="fac"><br>
+</form>
+</div>
+</body>
+</html>

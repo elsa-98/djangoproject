@@ -1,0 +1,35 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>login page</title>
+{% load static  %}
+
+<link rel="stylesheet"   href="{% static 'css/style.css'%}">
+<style>
+</style>
+</head>
+<body class="c">
+<div class="navbar">
+
+    
+    <ul>
+        <li><a href="{% url 'sprof' %}">PROFILE </a></li>
+        <li><a href="{%url 'stumarv' %}">MARKS</a></li>
+        <li><a href="{%url 'stuattv' %}">ATTENDANCE </a>
+            <div class="submenu">
+            <ul>
+                <li><a href="{%url 'stleav' %}">APPLY LEAVE </a></li>
+                <li><a href="{%url 'stleafet' %}">VIEW LEAVE </a></li>
+            </ul>
+            </div>
+        </li>
+        <li>
+            <form  action="{% url 'logouts' %}"  method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Logout" name="Logout" class="frm">
+            </form>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
